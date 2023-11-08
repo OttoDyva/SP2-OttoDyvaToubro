@@ -5,7 +5,7 @@ public abstract class ACar implements Car
     private final String model;
     private final int numberOfDoors;
 
-    public ACar(String registrationNumber, String make, String model, int numberOfDoors)
+    public ACar(String registrationNumber, String make, String model, int numberOfDoors) // Første constructor bilerne låner af
     {
         this.registrationNumber = registrationNumber;
         this.make = make;
@@ -29,7 +29,7 @@ public abstract class ACar implements Car
         return numberOfDoors;
     }
     @Override
-    public String toString()
+    public String toString() // min super toString som de andre biler skal bruge
     {
         return " Registration Number: " + registrationNumber + " Make: " + make + " Model: " + model + " Number of Doors: " + numberOfDoors;
     }

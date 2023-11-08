@@ -11,10 +11,44 @@ public class DieselCar extends AFuelCar
     {
         return "Diesel";
     }
+    // Laver registration fee for diesel er det samme som gasoline, der skal bare være en ekstra udligningsafgift
     public int getRegistrationFee()
     {
-        // indsæt registration fee for en diesel car
-        return 0;
+        int totalFee = 0;
+        if (getKmPerLitre() >= 20 && getKmPerLitre() <= 50)
+        {
+            totalFee = 330+130;
+        }
+        else if (getKmPerLitre() >= 15 && getKmPerLitre() < 20)
+        {
+            totalFee = 1050+1390;
+        }
+        else if (getKmPerLitre() >= 10 && getKmPerLitre() < 15)
+        {
+            totalFee = 2340+1850;
+        }
+        else if (getKmPerLitre() >= 5 && getKmPerLitre() < 10)
+        {
+            totalFee = 5500+2770;
+        }
+        else if (getKmPerLitre() >=0 && getKmPerLitre() < 5)
+        {
+            totalFee = 10470+15260;
+        }
+        else
+        {
+            System.out.println("Invalid number");
+        }
+        // Man skal også forholde sig til hasParticleFilter, som har en afgift på 1000 som
+        // skal ligges oveni hvis bilen ikke har det.
+        if(!hasParticleFilter)
+        {
+            return totalFee + 1000;
+        }
+        else
+        {
+            return totalFee;
+        }
     }
     public boolean isHasParticleFilter()
     {
@@ -23,6 +57,6 @@ public class DieselCar extends AFuelCar
     @Override
     public String toString()
     {
-        return super.toString() + " Fuel: " + getFuelType() + "km/p/l: " + getKmPerLitre() + " Particle Filter: " + isHasParticleFilter();
+        return super.toString() + " Fuel: " + getFuelType() + " kmPrLtr: " + getKmPerLitre() + " Particle Filter: " + isHasParticleFilter();
     }
 }

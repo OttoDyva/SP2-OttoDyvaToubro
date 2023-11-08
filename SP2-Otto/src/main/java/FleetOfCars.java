@@ -2,20 +2,20 @@ import java.util.ArrayList;
 
 public class FleetOfCars
 {
-    private ArrayList<Car> carFleet;
+    private ArrayList<Car> Fleet;
 
     public FleetOfCars()
     {
-        carFleet = new ArrayList<>();
+        Fleet = new ArrayList<>();
     }
     public void addCarToTheFleet(Car car)
     {
-        carFleet.add(car);
+        Fleet.add(car);
     }
-    public int getTotalRegistrationFeeForCars()
+    public int getTotalRegistrationFeeForFleet() // Omregner mine cars registration fee fra min arraylist til et samlet tal
     {
         int totalRegistrationFee = 0;
-        for (Car car : carFleet)
+        for (Car car : Fleet)
         {
             totalRegistrationFee += car.getRegistrationFee();
         }
@@ -23,10 +23,10 @@ public class FleetOfCars
     }
 
     @Override
-    public String toString()
+    public String toString() // toString metode for at printe mine biler
     {
-        StringBuilder result = new StringBuilder("Cars in fleet:\n");
-        for (Car car : carFleet)
+        StringBuilder result = new StringBuilder("Cars in Shop:\n");
+        for (Car car : Fleet)
         {
             result.append(car.toString()).append("\n");
         }
