@@ -8,7 +8,7 @@ public class FleetOfCars
     {
         Fleet = new ArrayList<>();
     }
-    public void addCarToTheFleet(Car car)
+    public void addCar(Car car)
     {
         Fleet.add(car);
     }

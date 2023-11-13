@@ -1,5 +1,3 @@
-import java.sql.SQLOutput;
-
 public class Main
 {
     public static void main(String[] args)
@@ -11,9 +9,9 @@ public class Main
         ElectricCar electricCar = new ElectricCar("AA11 123","Tesla","Model 3",4,68,300);
 
         //Instansierer mine tre biler her
-        fleet.addCarToTheFleet(gasolineCar);
-        fleet.addCarToTheFleet(dieselCar);
-        fleet.addCarToTheFleet(electricCar);
+        fleet.addCar(gasolineCar);
+        fleet.addCar(dieselCar);
+        fleet.addCar(electricCar);
 
         System.out.println(fleet); // printer mine cars fra Arraylist
         // Først printer jeg registration fee fra hver bil og til sidst det samlede for alle tre.
